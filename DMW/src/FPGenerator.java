@@ -33,9 +33,9 @@ public class FPGenerator {
 					newSuffix.add(item);
 			patterns.add(new Pattern(newSuffix, fpTree.frequentItems.get(freqItem))); // suffix of the item unique to this fpTree passed
 			//			System.out.println(patterns);
-
 			List<List<String>> conditionalDatabase = generateConditionalDatabase(fpTree, freqItem);
 			FPTree conditionalFPTree = new FPTree(conditionalDatabase, minSupCount);
+			System.out.println("FPTree created.");
 			fpGrowth(conditionalFPTree, newSuffix);
 		}
 	}
@@ -56,7 +56,6 @@ public class FPGenerator {
 		}
 		return conditionalDatabase;
 	}
-
 }
 
 class Pattern {
